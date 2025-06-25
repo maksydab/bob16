@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Itsd Engine Bob 16 - Wiki</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      image-rendering: pixelated;
+      margin-bottom: 80px; /* space for fixed button */
+    }
+
+    .wiki-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #1b1b1b;
+      border: 3px solid #444;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .wiki-title {
+      font-size: 28px;
+      color: #0ff;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    .wiki-section {
+      margin-top: 20px;
+    }
+
+    .btn-wiki {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      font-family: inherit;
+      font-weight: bold;
+      border-radius: 0;
+      background-color: #0ff;
+      color: #111;
+      border: 2px solid #000;
+      cursor: pointer;
+      padding: 10px 18px;
+      user-select: none;
+    }
+
+    .method-box {
+      background: #222;
+      border: 1px dashed #888;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+    }
+
+    code {
+      background: #333;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    pre {
+      background: #222;
+      padding: 10px;
+      overflow-x: auto;
+      border: 1px solid #333;
+      font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
+    }
+
+    hr {
+      border-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div id="wiki" class="wiki-container " tabindex="0" aria-label="Bob 16 Manual">
+    <div class="wiki-title"> Bob 16 Manual</div>
+
+    <div class="wiki-section">
+      <p><strong>Bob 16</strong> is a demo mini-game engine that saves its games into PNG files.It was made form scratch using canvas api in js by single dev , maksydab</p>
+      <p><strong>it's an work in progress early version,you may encounter many many bugs</strong></p>
+      <p>To use it:</p>
+      <ul>
+        <li>Open the <code>T</code> tab (Terminal)</li>
+        <li>Run the command <code>urn</code> to start the game</li>
+        <li>Use <code>save</code> to save your game and <code>load</code> to load a game</li>
+      </ul>
+    </div>
+
+    <div class="wiki-section">
+      <h5>🖌️ Editors</h5>
+      <ul>
+        <li><strong>Art Editor:</strong> in the <code>A</code> tab</li>
+        <li><strong>Tilemap Editor:</strong> in the <code>L</code> tab — move with arrow keys, click to place tiles, hold <code>Delete</code> + click to remove tiles</li>
+        <li><strong>Code Editor:</strong> in the <code>C</code> tab — there are 7 sections which merge at runtime into one Lua script</li>
+      </ul>
+    </div>
+
+    <div class="wiki-section">
+      <h5>🔧 Lua Engine Methods</h5>
+
+      <div class="method-box">
+<pre><code>clear(pidx)
+  - Clears the pixel buffer at with color picked from a pallete by index (default 0)
+
+drawPixel(x, y, idx)
+  - Draws pixel at (x, y) with color index idx (default 7)
+
+drawRect(x, y, w, h, idx)
+  - Draws filled rectangle starting at (x, y), width w, height h, color idx (default 7)
+
+drawLine(x1, y1, x2, y2, idx)
+  - Draws line from (x1, y1) to (x2, y2), color idx (default 7)
+
+drawImage(index, x, y, scale)
+  - Draws sprite from atlas at index, positioned at (x, y), scaled by scale (default 1)
+
+drawTilemap(scale=1, ox=0, oy=0)
+  - Draws the tilemap scaled by scale, offset by (ox, oy)
+
+getTile(x, y)
+  - Returns a table {x=..., y=..., id=...} for tile at (x, y), or nil
+
+setTile(x, y, id)
+  - Sets tile at (x, y) to tile id
+</code></pre>
+      </div>
+
+      <div class="method-box">
+<pre><code>isKeyDown(key)
+  - Returns true if the given key (string) is currently pressed
+</code></pre>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="wiki-section">
+      <p>
+        The engine outputs the saved game as a PNG image that you can freely edit. Just beware that some editors might overwrite metadata.
+      </p>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
